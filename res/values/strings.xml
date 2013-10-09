@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PhonePhactor</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="phone_number">PhonePhactor number</string>
+    <string name="phone_number_desc">Number from where PhonePhactor calls</string>
+    <string name="button_save">Save</string>
+    <string name="is_active">Active</string>
+    <string name="is_active_desc">Should the service pick-up phone on call from phone phactor</string>
+    <string name="notification_title">AutoAuth enabled</string>
+    <string name="notification_text">Select to configure or disable.</string>
+</resources>
