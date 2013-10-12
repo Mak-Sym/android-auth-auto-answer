@@ -6,9 +6,9 @@ import android.content.Intent;
 
 public class AuthenticatorAutoAnswerBootReceiver extends BroadcastReceiver {
 
-	@Override
-	public void onReceive(Context context, Intent intent) {
-		new AuthenticatorAutoAnswerNotifier(context).update();
-	}
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        new AuthenticatorAutoAnswerNotifier(context).update();
+    }
 
 }
