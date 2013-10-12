@@ -45,7 +45,7 @@ public class AuthenticatorAutoAnswerIntentService extends IntentService {
      */
     @Override
     protected void onHandleIntent(Intent intent) {
-        Log.d("AuthenticatorAutoAnswerIntentService.onReceive", "Received!");
+        Log.d("AuthenticatorAutoAnswerIntentService.onHandleIntent", "Received!");
         try {
             //delay for some time to ring
             //if service picks up phone too early, call will run "in background", which looks ugly
@@ -56,10 +56,10 @@ public class AuthenticatorAutoAnswerIntentService extends IntentService {
             // Make sure the phone is still ringing
             TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
             if (tm.getCallState() != TelephonyManager.CALL_STATE_RINGING) {
-                Log.d("AuthenticatorAutoAnswerIntentService.answerToPhonePhactor", "not ringing any more :(");
+                Log.d("AuthenticatorAutoAnswerIntentService.onHandleIntent", "not ringing any more :(");
                 return;
             }
-            Log.d("AuthenticatorAutoAnswerIntentService.answerToPhonePhactor", "Still Ringing!");
+            Log.d("AuthenticatorAutoAnswerIntentService.onHandleIntent", "Still Ringing!");
 
             //get telephony service
             Class c = Class.forName(tm.getClass().getName());
@@ -73,7 +73,7 @@ public class AuthenticatorAutoAnswerIntentService extends IntentService {
             hangUp(context, telephonyService);
         } catch(Exception e){
             e.printStackTrace();
-            Log.w("AuthenticatorAutoAnswerIntentService.onReceive","Error trying to answer using telephony service. Intent: " + intent);
+            Log.w("AuthenticatorAutoAnswerIntentService.onHandleIntent","Error trying to answer using telephony service. Intent: " + intent);
         }
         return;
     }
